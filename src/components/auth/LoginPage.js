@@ -11,7 +11,7 @@ import { createTheme } from "@mui/material/styles";
 import { Avatar, Container, CssBaseline, Paper } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
 import { useNavigate } from "react-router-dom";
-import { getActions } from "../../app/actions/authActions";
+import { getAuthActions } from "../../app/actions/authActions";
 import { connect } from "react-redux";
 
 function Copyright(props) {
@@ -144,7 +144,7 @@ const LoginPage = ({ login }) => {
 
 const mapActionsToProps = (dispatch) => {
   return {
-    ...getActions(dispatch),
+    ...getAuthActions(dispatch),
   };
 };
 export default connect(null, mapActionsToProps)(LoginPage);

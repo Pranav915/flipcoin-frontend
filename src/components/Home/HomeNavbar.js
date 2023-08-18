@@ -15,6 +15,9 @@ import AccountCircle from "@mui/icons-material/Person";
 import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
 import MoreIcon from "@mui/icons-material/MoreVert";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import WalletIcon from "@mui/icons-material/Wallet";
+import { useNavigate } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -57,6 +60,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function HomeNavbar() {
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -120,9 +124,16 @@ export default function HomeNavbar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+        <IconButton
+          size="large"
+          aria-label="show 4 new mails"
+          color="inherit"
+          onClick={() => {
+            navigate("/cart");
+          }}
+        >
           <Badge badgeContent={4} color="error">
-            <MailIcon />
+            <ShoppingCartIcon />
           </Badge>
         </IconButton>
         <p>Messages</p>
@@ -133,8 +144,14 @@ export default function HomeNavbar() {
           aria-label="show 17 new notifications"
           color="inherit"
         >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
+          <Badge
+            badgeContent={17}
+            color="error"
+            onClick={() => {
+              navigate("/wallet");
+            }}
+          >
+            <WalletIcon />
           </Badge>
         </IconButton>
         <p>Notifications</p>
@@ -190,18 +207,24 @@ export default function HomeNavbar() {
               size="large"
               aria-label="show 4 new mails"
               color="inherit"
+              onClick={() => {
+                navigate("/cart");
+              }}
             >
               <Badge badgeContent={4} color="error">
-                <MailIcon />
+                <ShoppingCartIcon />
               </Badge>
             </IconButton>
             <IconButton
               size="large"
               aria-label="show 17 new notifications"
               color="inherit"
+              onClick={() => {
+                navigate("/wallet");
+              }}
             >
               <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
+                <WalletIcon />
               </Badge>
             </IconButton>
             <IconButton

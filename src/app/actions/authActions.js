@@ -12,7 +12,7 @@ export const setUserDetails = (userDetails) => {
   };
 };
 
-export const getActions = (dispatch) => {
+export const getAuthActions = (dispatch) => {
   return {
     login: (userDetails, navigate) => dispatch(login(userDetails, navigate)),
     register: (userDetails, navigate) =>
@@ -32,7 +32,7 @@ export const login = (userDetails, navigate) => {
       const { userDetails } = response?.data;
       localStorage.setItem("user", JSON.stringify(userDetails));
       dispatch(setUserDetails(userDetails));
-      navigate("/home");
+      navigate("/");
     }
   };
 };
@@ -49,7 +49,7 @@ export const register = (userDetails, navigate) => {
       localStorage.setItem("user", JSON.stringify(userDetails));
 
       dispatch(setUserDetails(userDetails));
-      navigate("/home");
+      navigate("/");
     }
   };
 };

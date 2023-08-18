@@ -9,7 +9,7 @@ import { Box, IconButton, styled } from "@mui/material";
 import { makeStyles } from "@mui/material";
 import RefreshIcon from "@mui/icons-material/Refresh";
 
-const ClothCard = () => {
+const ClothCard = ({ imgURl, itemId }) => {
   const useStyles = styled({
     root: {
       maxWidth: 310,
@@ -42,7 +42,7 @@ const ClothCard = () => {
           component="img"
           alt="green iguana"
           height="260"
-          image="https://source.unsplash.com/random"
+          image={imgURl}
         />
         <CardActions sx={{ mx: 0 }}>
           <Button size="small">View Details</Button>

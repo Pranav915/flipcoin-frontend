@@ -14,7 +14,7 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 import { Paper } from "@mui/material";
-import { getActions } from "../../app/actions/authActions";
+import { getAuthActions } from "../../app/actions/authActions";
 import { connect } from "react-redux";
 
 function Copyright(props) {
@@ -171,7 +171,7 @@ const RegisterPage = ({ register }) => {
 
 const mapActionsToProps = (dispatch) => {
   return {
-    ...getActions(dispatch),
+    ...getAuthActions(dispatch),
   };
 };
 

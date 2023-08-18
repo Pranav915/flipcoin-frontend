@@ -44,6 +44,17 @@ export const register = async (data) => {
   }
 };
 
+export const getAllSuggestions = async (data) => {
+  try {
+    return await apiClient.post("/main/getAllSuggestions", data);
+  } catch (exception) {
+    return {
+      error: true,
+      exception,
+    };
+  }
+};
+
 const checkResponseCode = (exception) => {
   const responseCode = exception?.response?.status;
 
