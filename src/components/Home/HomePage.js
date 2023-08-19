@@ -46,16 +46,16 @@ const HomePage = ({ getAllSuggestions, setUserDetails }) => {
     },
   ]);
 
-  useEffect(() => {
-    const userDetails = localStorage.getItem("user");
-    if (!userDetails) {
-      logout();
-    } else {
-      setUserDetails(JSON.parse(userDetails));
-    }
-    // const res = getAllSuggestions(userDetails._id);
-    // setOutfitList(res);
-  }, []);
+  // useEffect(() => {
+  //   const userDetails = localStorage.getItem("user");
+  //   if (!userDetails) {
+  //     logout();
+  //   } else {
+  //     setUserDetails(JSON.parse(userDetails));
+  //   }
+  //   // const res = getAllSuggestions(userDetails._id);
+  //   // setOutfitList(res);
+  // }, []);
 
   return (
     <>
